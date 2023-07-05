@@ -1,52 +1,32 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main() {
+    float t1, t2, t3;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    // Введення значень t1, t2, t3 з клавіатури
+    scanf("%f %f %f", &t1, &t2, &t3);
 
-# Precompiled Headers
-*.gch
-*.pch
+    float total_time = t1;
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    // Порівняння t2 з t1 та збереження більшого значення в total_time
+    if(t2 > t1)
+    {
+        total_time = t2;
+    }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    // Порівняння t3 з t1 та збереження більшого значення в total_time
+    if(t3 > t1)
+    {
+        total_time = t3;
+    }
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    // Виведення середнього значення total_time, поділеного на 3
+    printf("%.2f\n", total_time / 3.0);
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+    // Зупинка виконання програми, очікування натиснення користувачем будь-якої клавіші
+    system("pause");
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    // Повернення значення 0, що вказує на успішне завершення програми
+    return 0;
+}
